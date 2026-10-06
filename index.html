@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>عود مود إنتنس — Lattafa & Nedjmou | عطر الملوك</title>
 <meta name="description" content="عود مود إنتنس الأصلي من Lattafa. علبة 3900 دج | باك علبتين 7400 دج | باك 3 علب 10500 دج. توصيل مجاني للباكات." />
-<meta name="theme-color" content="#C9A961" />
+<meta name="theme-color" content="#0F0F0F" />
 
 <meta property="og:type" content="product" />
 <meta property="og:title" content="عود مود إنتنس — عطر الملوك" />
@@ -774,7 +774,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
 </style>
 </head>
 
-<body>
+<body class="dark">
 
 <div class="top-bar">
   <div class="brand-mini">
@@ -783,7 +783,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
   </div>
   <div class="top-controls">
     <button class="icon-btn" onclick="openQR()" title="مشاركة">📱</button>
-    <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع الليلي">🌙</button>
+    <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="تبديل الوضع">☀️</button>
   </div>
 </div>
 
@@ -1169,7 +1169,6 @@ const WHATSAPP_NUMBER = "213794440945";
 const TELEGRAM_BOT_TOKEN = "";
 const TELEGRAM_CHAT_ID = "";
 const STORAGE_KEY = "oudmood_orders_v3";
-const THEME_KEY = "oudmood_theme";
 const COUNTDOWN_KEY = "oudmood_countdown_end";
 
 /* ============================================================
@@ -1682,19 +1681,18 @@ function clearOrders() {
 }
 
 /* ============================================================
-   🌙 THEME
+   🌙 THEME — الوضع الليلي افتراضي دائماً (لا يُحفظ)
    ============================================================ */
 function toggleTheme() {
   document.body.classList.toggle('dark');
   const isDark = document.body.classList.contains('dark');
   document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
 }
+
 function initTheme() {
-  if (localStorage.getItem(THEME_KEY) === 'dark') {
-    document.body.classList.add('dark');
-    document.getElementById('themeBtn').textContent = '☀️';
-  }
+  // دائماً يبدأ الموقع بالوضع الليلي (أسود/ذهبي)
+  document.body.classList.add('dark');
+  document.getElementById('themeBtn').textContent = '☀️';
 }
 
 /* ============================================================
