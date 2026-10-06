@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>عود مود إنتنس — Lattafa & Nedjmou | عطر الملوك</title>
-<meta name="description" content="عود مود إنتنس الأصلي من Lattafa. علبة 3900 دج | باك علبتين 7400 دج | باك 3 علب 10500 دج. توصيل مجاني لكل الجزائر." />
+<meta name="description" content="عود مود إنتنس الأصلي من Lattafa. علبة 3900 دج | باك علبتين 7400 دج | باك 3 علب 10500 دج. توصيل مجاني للباكات." />
 <meta name="theme-color" content="#C9A961" />
 
 <meta property="og:type" content="product" />
@@ -473,7 +473,28 @@ body.dark .review-loc { color: rgba(245,240,230,0.5); }
 .trust-item p { color: var(--gold); font-weight: 700; }
 
 .order-page { min-height: 100vh; padding: 140px 0 80px; }
-.back-link { color: var(--gold); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 32px; cursor: pointer; }
+.back-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  padding: 12px 22px;
+  background: rgba(201,169,97,0.1);
+  border: 1px solid rgba(201,169,97,0.3);
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+.back-link:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateX(-4px);
+}
 .order-title { font-family: 'Amiri', serif; font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 16px; font-weight: 700; }
 .order-subtitle { text-align: center; color: rgba(26,26,26,0.6); margin-bottom: 48px; }
 body.dark .order-subtitle { color: rgba(245,240,230,0.6); }
@@ -860,7 +881,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
             <li>توصيل لكل 58 ولاية</li>
             <li>الدفع عند الاستلام</li>
           </ul>
-          <a class="pack-cta" onclick="showOrderWithPack(event, 'single')">اطلب علبة واحدة</a>
+          <a href="#" class="pack-cta" onclick="showOrderWithPack(event, 'single')">اطلب علبة واحدة</a>
         </div>
 
         <div class="pack-card featured reveal">
@@ -880,7 +901,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
             <li>💚 <strong>توفير 400 دج</strong></li>
             <li>الدفع عند الاستلام</li>
           </ul>
-          <a class="pack-cta" onclick="showOrderWithPack(event, 'double')">اطلب باك علبتين</a>
+          <a href="#" class="pack-cta" onclick="showOrderWithPack(event, 'double')">اطلب باك علبتين</a>
         </div>
 
         <div class="pack-card mega reveal">
@@ -900,7 +921,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
             <li>💚 <strong>توفير 1200 دج</strong></li>
             <li>🎁 <strong>هدية مجانية</strong></li>
           </ul>
-          <a class="pack-cta" onclick="showOrderWithPack(event, 'mega')">اطلب باك 3 علب</a>
+          <a href="#" class="pack-cta" onclick="showOrderWithPack(event, 'mega')">اطلب باك 3 علب</a>
         </div>
       </div>
     </div>
@@ -975,9 +996,9 @@ tr:hover { background: rgba(255,255,255,0.03); }
     <p class="footer-contact">📞 <a href="tel:0794440945" dir="ltr">0794440945</a></p>
     <p style="font-size:0.85rem;">© 2026 — جميع الحقوق محفوظة</p>
     <div class="footer-links">
-      <a onclick="showAdmin()">لوحة التحكم</a>
+      <a onclick="showAdmin(event)">لوحة التحكم</a>
       <a onclick="openQR()">مشاركة QR</a>
-      <a onclick="showOrder()">اطلب الآن</a>
+      <a onclick="showOrder(event)">اطلب الآن</a>
     </div>
   </footer>
 
@@ -985,7 +1006,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
 
 <div id="page-order" class="page">
   <div class="order-page container">
-    <a class="back-link" onclick="showHome()">← العودة للرئيسية</a>
+    <a class="back-link" onclick="showHome(event)">← العودة للرئيسية</a>
     <h1 class="order-title">إتمام <span class="gold-gradient">الطلب</span></h1>
     <p class="order-subtitle">عود مود إنتنس — اختر عرضك</p>
 
@@ -1073,7 +1094,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
           </div>
           <div class="total-line">
             <span>🚚 التوصيل:</span>
-            <span id="lineShipping">يُحسب</span>
+            <span id="lineShipping">اختر الولاية</span>
           </div>
           <div class="total-line final">
             <span>الإجمالي:</span>
@@ -1126,7 +1147,7 @@ tr:hover { background: rgba(255,255,255,0.03); }
     <div id="ordersContainer"></div>
 
     <p style="text-align:center; margin-top:40px;">
-      <a onclick="showHome()" style="color:var(--gold); text-decoration:none; cursor:pointer;">← العودة للرئيسية</a>
+      <a onclick="showHome(event)" style="color:var(--gold); text-decoration:none; cursor:pointer;">← العودة للرئيسية</a>
     </p>
   </div>
 </div>
@@ -1141,6 +1162,9 @@ tr:hover { background: rgba(255,255,255,0.03); }
 </div>
 
 <script>
+/* ============================================================
+   ⚙️ CONFIG
+   ============================================================ */
 const WHATSAPP_NUMBER = "213794440945";
 const TELEGRAM_BOT_TOKEN = "";
 const TELEGRAM_CHAT_ID = "";
@@ -1148,25 +1172,102 @@ const STORAGE_KEY = "oudmood_orders_v3";
 const THEME_KEY = "oudmood_theme";
 const COUNTDOWN_KEY = "oudmood_countdown_end";
 
+/* ============================================================
+   🚚 أسعار التوصيل Zimou Express — عدّلها كما تريد
+   ============================================================ */
+/* الرقم هو رمز الولاية (01 = أدرار، 16 = الجزائر، ...) */
+const SHIPPING_PRICES = {
+  // ===== الوسط =====
+  "16": 400, // الجزائر
+  "09": 400, // البليدة
+  "35": 400, // بومرداس
+  "42": 400, // تيبازة
+  "15": 500, // تيزي وزو
+  "06": 500, // بجاية
+  "10": 500, // البويرة
+  "26": 500, // المدية
+  "44": 500, // عين الدفلى
+  "02": 500, // الشلف
+  
+  // ===== الشرق =====
+  "19": 600, // سطيف
+  "25": 600, // قسنطينة
+  "23": 600, // عنابة
+  "05": 600, // باتنة
+  "21": 600, // سكيكدة
+  "24": 600, // قالمة
+  "18": 600, // جيجل
+  "43": 600, // ميلة
+  "34": 600, // برج بوعريريج
+  "28": 600, // المسيلة
+  "12": 700, // تبسة
+  "36": 700, // الطارف
+  "41": 700, // سوق أهراس
+  "40": 700, // خنشلة
+  "04": 700, // أم البواقي
+  
+  // ===== الغرب =====
+  "31": 600, // وهران
+  "22": 600, // سيدي بلعباس
+  "13": 600, // تلمسان
+  "46": 600, // عين تموشنت
+  "27": 600, // مستغانم
+  "48": 600, // غليزان
+  "14": 600, // تيارت
+  "20": 700, // سعيدة
+  "29": 700, // معسكر
+  "45": 700, // النعامة
+  "32": 800, // البيض
+  
+  // ===== الجنوب =====
+  "30": 800, // ورقلة
+  "47": 800, // غرداية
+  "39": 800, // الوادي
+  "07": 800, // بسكرة
+  "17": 800, // الجلفة
+  "03": 900, // الأغواط
+  "08": 1000, // بشار
+  "11": 1200, // تمنراست
+  "01": 1200, // أدرار
+  "37": 1200, // تندوف
+  "33": 1200, // إليزي
+  "49": 900, // تيميمون
+  "50": 1200, // برج باجي مختار
+  "51": 800, // أولاد جلال
+  "52": 1200, // بني عباس
+  "53": 1200, // عين صالح
+  "54": 1200, // عين قزام
+  "55": 800, // تقرت
+  "56": 1200, // جانت
+  "57": 800, // المغير
+  "58": 800, // المنيعة
+  "38": 700, // تيسمسيلت
+};
+
+/* السعر الافتراضي (إذا لم تكن الولاية في القائمة) */
+const DEFAULT_SHIPPING = 600;
+
+/* ============================================================
+   📦 PACKS
+   ============================================================ */
 const PACKS = {
   single: { id: 'single', name: 'علبة واحدة', icon: '🖤', price: 3900, boxes: 1, freeShipping: false, oldPrice: 0 },
   double: { id: 'double', name: 'باك علبتين', icon: '🖤🖤', price: 7400, boxes: 2, freeShipping: true, oldPrice: 7800 },
   mega:   { id: 'mega', name: 'باك 3 علب', icon: '🖤🖤🖤', price: 10500, boxes: 3, freeShipping: true, oldPrice: 11700, gift: true },
 };
 
+/* ============================================================
+   🎟️ COUPONS
+   ============================================================ */
 const COUPONS = {
   'NEDJMOU10': { type: 'percent', value: 10, label: '10% خصم' },
   'OUDMOOD5':  { type: 'percent', value: 5,  label: '5% خصم' },
   'WELCOME200': { type: 'fixed', value: 200, label: '200 دج خصم' },
 };
 
-const SHIPPING_ZONES = {
-  center: { price: 400, wilayas: ["16","09","35","42","15","06","19","25","31","13","23","24","21","18","43","44","10","26","28","34"] },
-  east:   { price: 600, wilayas: ["05","12","25","21","24","23","36","41","40","43","19","06","15","18"] },
-  west:   { price: 600, wilayas: ["13","22","31","46","48","27","29","20","14","45","32"] },
-  south:  { price: 800, wilayas: ["01","08","11","30","37","47","33","39","49","50","51","52","53","54","55","56","57","58"] },
-};
-
+/* ============================================================
+   🗺️ الولايات
+   ============================================================ */
 const WILAYAS = [
   "01 - أدرار","02 - الشلف","03 - الأغواط","04 - أم البواقي","05 - باتنة",
   "06 - بجاية","07 - بسكرة","08 - بشار","09 - البليدة","10 - البويرة",
@@ -1186,21 +1287,45 @@ let quantity = 1;
 let selectedPack = 'single';
 let appliedCoupon = null;
 
+/* ============================================================
+   🎬 NAVIGATION
+   ============================================================ */
 function showPage(id) {
   document.querySelectorAll('.page, .admin-page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function showHome() { showPage('home'); }
-function showOrder() { selectedPack = 'single'; resetOrderForm(); showPage('order'); }
-function showOrderWithPack(packId) { selectedPack = packId; resetOrderForm(); showPage('order'); }
-function showAdmin() { renderAdmin(); showPage('admin'); }
+function showHome(e) {
+  if (e) e.preventDefault();
+  showPage('home');
+}
+function showOrder(e) {
+  if (e) e.preventDefault();
+  selectedPack = 'single';
+  resetOrderForm();
+  showPage('order');
+}
+function showOrderWithPack(e, packId) {
+  if (e) e.preventDefault();
+  selectedPack = packId;
+  resetOrderForm();
+  showPage('order');
+}
+function showAdmin(e) {
+  if (e) e.preventDefault();
+  renderAdmin();
+  showPage('admin');
+}
 
+/* ============================================================
+   🎁 PACK
+   ============================================================ */
 function selectPack(packId) {
   selectedPack = packId;
   document.querySelectorAll('.pack-option').forEach(el => el.classList.remove('selected'));
   const map = { single: 'packSingle', double: 'packDouble', mega: 'packMega' };
-  document.getElementById(map[packId]).classList.add('selected');
+  const el = document.getElementById(map[packId]);
+  if (el) el.classList.add('selected');
   updateTotal();
 }
 
@@ -1212,26 +1337,33 @@ function resetOrderForm() {
   document.getElementById('couponInput').value = '';
   document.getElementById('couponMsg').textContent = '';
   document.getElementById('couponMsg').className = 'coupon-msg';
+  document.getElementById('wilaya').value = '';
   updateTotal();
 }
 
+/* ============================================================
+   🚚 SHIPPING
+   ============================================================ */
 function getShippingPrice(wilayaValue) {
   if (!wilayaValue) return null;
   const code = wilayaValue.split(' ')[0];
-  for (const zone of Object.values(SHIPPING_ZONES)) {
-    if (zone.wilayas.includes(code)) return zone.price;
-  }
-  return 600;
+  return SHIPPING_PRICES[code] !== undefined ? SHIPPING_PRICES[code] : DEFAULT_SHIPPING;
 }
 
 function updateShipping() { updateTotal(); }
 
+/* ============================================================
+   🔢 QUANTITY
+   ============================================================ */
 function changeQty(delta) {
   quantity = Math.max(1, Math.min(10, quantity + delta));
   document.getElementById('qtyValue').textContent = quantity;
   updateTotal();
 }
 
+/* ============================================================
+   🎟️ COUPON
+   ============================================================ */
 function applyCoupon() {
   const code = document.getElementById('couponInput').value.trim().toUpperCase();
   const msg = document.getElementById('couponMsg');
@@ -1248,6 +1380,9 @@ function applyCoupon() {
   updateTotal();
 }
 
+/* ============================================================
+   💰 TOTAL
+   ============================================================ */
 function updateTotal() {
   const pack = PACKS[selectedPack];
   const basePrice = pack.price * quantity;
@@ -1258,7 +1393,8 @@ function updateTotal() {
       : Math.min(appliedCoupon.value, basePrice);
   }
   const wilayaValue = document.getElementById('wilaya').value;
-  const shipping = pack.freeShipping ? 0 : (getShippingPrice(wilayaValue) || 0);
+  const shippingBase = pack.freeShipping ? 0 : (getShippingPrice(wilayaValue) || 0);
+  const shipping = shippingBase;
   const finalTotal = basePrice - discount + shipping;
 
   document.getElementById('lineBase').textContent = basePrice + ' دج';
@@ -1280,6 +1416,9 @@ function updateTotal() {
   return { basePrice, discount, shipping, finalTotal };
 }
 
+/* ============================================================
+   🗺️ WILAYAS
+   ============================================================ */
 function populateWilayas() {
   const select = document.getElementById('wilaya');
   WILAYAS.forEach(w => {
@@ -1290,6 +1429,9 @@ function populateWilayas() {
   });
 }
 
+/* ============================================================
+   📤 SUBMIT ORDER
+   ============================================================ */
 function submitOrder(e) {
   e.preventDefault();
   const customer = document.getElementById('customer').value.trim();
@@ -1314,7 +1456,7 @@ function submitOrder(e) {
     total: totals.finalTotal,
     coupon: appliedCoupon ? appliedCoupon.code : null,
     freeShipping: pack.freeShipping,
-    yalidineTracking: '',
+    zimouTracking: '',
     notes,
     status: 'PENDING',
     createdAt: new Date().toISOString()
@@ -1351,11 +1493,14 @@ function submitOrder(e) {
       <p>سنتواصل معك عبر واتساب لتأكيد الطلب.<br>احتفظ برقم طلبك لتتبعه:</p>
       <div class="order-id-box">${orderId}</div>
       <p style="font-size:0.85rem;">يمكنك تتبع طلبك من الصفحة الرئيسية</p>
-      <div><a class="btn-primary" onclick="showHome()" style="cursor:pointer;">العودة للرئيسية</a></div>
+      <div><a href="#" class="btn-primary" onclick="showHome(event)" style="cursor:pointer;">العودة للرئيسية</a></div>
     </div>
   `;
 }
 
+/* ============================================================
+   🤖 TELEGRAM
+   ============================================================ */
 function sendTelegramNotification(message) {
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -1365,6 +1510,9 @@ function sendTelegramNotification(message) {
   }).catch(() => {});
 }
 
+/* ============================================================
+   📦 TRACK
+   ============================================================ */
 function trackOrder() {
   const input = document.getElementById('trackInput').value.trim();
   const result = document.getElementById('trackResult');
@@ -1385,12 +1533,12 @@ function trackOrder() {
   });
 
   let zimouHtml = '';
-  if (order.yalidineTracking) {
+  if (order.zimouTracking) {
     zimouHtml = `
       <div style="margin-top: 16px; padding: 12px; background: rgba(201,169,97,0.1); border-radius: 8px;">
-        <p style="font-size: 0.85rem; margin-bottom: 8px;">📦 <strong>رقم تتبع Zimou:</strong></p>
-        <p dir="ltr" style="font-family: monospace; font-weight: 700; color: var(--gold);">${order.yalidineTracking}</p>
-        <a href="https://www.zimou.express" target="_blank" style="color: var(--gold); font-size: 0.85rem;">زيارة موقع Zimou ←</a>
+        <p style="font-size: 0.85rem; margin-bottom: 8px;">📦 <strong>رقم تتبع Zimou Express:</strong></p>
+        <p dir="ltr" style="font-family: monospace; font-weight: 700; color: var(--gold);">${order.zimouTracking}</p>
+        <a href="https://zimou.express" target="_blank" style="color: var(--gold); font-size: 0.85rem;">زيارة موقع Zimou Express ←</a>
       </div>
     `;
   }
@@ -1405,6 +1553,9 @@ function trackOrder() {
   `;
 }
 
+/* ============================================================
+   👑 ADMIN
+   ============================================================ */
 function renderAdmin() {
   const allOrders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   const search = (document.getElementById('searchInput')?.value || '').toLowerCase();
@@ -1469,7 +1620,7 @@ function renderAdmin() {
         <td style="color:var(--gold); font-weight:700;">${o.total} دج</td>
         <td><span class="status-badge status-${o.status}" onclick="toggleStatus('${o.id}')">${translateStatus(o.status)}</span></td>
         <td>
-          <input type="text" value="${o.yalidineTracking || ''}" placeholder="رقم Zimou"
+          <input type="text" value="${o.zimouTracking || ''}" placeholder="رقم Zimou"
                  onchange="updateZimouTracking('${o.id}', this.value)"
                  style="width: 120px; padding: 6px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,169,97,0.3); color: var(--cream); font-size: 0.85rem;" />
         </td>
@@ -1502,7 +1653,7 @@ function updateZimouTracking(orderId, trackingNumber) {
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
   const order = orders.find(o => o.id === orderId);
   if (order) {
-    order.yalidineTracking = trackingNumber;
+    order.zimouTracking = trackingNumber;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(orders));
   }
 }
@@ -1513,7 +1664,7 @@ function exportOrders() {
   const headers = ['رقم الطلب', 'التاريخ', 'العرض', 'العلب', 'الاسم', 'الهاتف', 'الولاية', 'البلدية', 'الإجمالي', 'الحالة', 'تتبع Zimou', 'ملاحظات'];
   const rows = orders.map(o => [
     o.id || '', new Date(o.createdAt).toLocaleString('ar-DZ'), o.packName || '', o.boxes || 1,
-    o.customer, o.phone, o.wilaya, o.baladiya, o.total, translateStatus(o.status), o.yalidineTracking || '', o.notes || ''
+    o.customer, o.phone, o.wilaya, o.baladiya, o.total, translateStatus(o.status), o.zimouTracking || '', o.notes || ''
   ]);
   let csv = '\uFEFF' + headers.join(',') + '\n';
   rows.forEach(r => { csv += r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',') + '\n'; });
@@ -1530,6 +1681,9 @@ function clearOrders() {
   renderAdmin();
 }
 
+/* ============================================================
+   🌙 THEME
+   ============================================================ */
 function toggleTheme() {
   document.body.classList.toggle('dark');
   const isDark = document.body.classList.contains('dark');
@@ -1543,6 +1697,9 @@ function initTheme() {
   }
 }
 
+/* ============================================================
+   ⏰ COUNTDOWN
+   ============================================================ */
 function initCountdown() {
   let endTime = localStorage.getItem(COUNTDOWN_KEY);
   if (!endTime || parseInt(endTime) < Date.now()) {
@@ -1564,6 +1721,9 @@ function initCountdown() {
   setInterval(tick, 1000);
 }
 
+/* ============================================================
+   📸 GALLERY
+   ============================================================ */
 function initGallery() {
   const gallery = document.getElementById('gallery');
   if (!gallery) return;
@@ -1584,6 +1744,9 @@ function initGallery() {
   setInterval(() => showSlide((current + 1) % imgs.length), 4000);
 }
 
+/* ============================================================
+   ✨ SHADER
+   ============================================================ */
 function initShader() {
   const canvas = document.getElementById('shaderCanvas');
   if (!canvas) return;
@@ -1614,6 +1777,9 @@ function initShader() {
   animate();
 }
 
+/* ============================================================
+   📱 QR
+   ============================================================ */
 function openQR() {
   document.getElementById('qrModal').classList.add('active');
   const canvas = document.getElementById('qrCanvas');
@@ -1639,6 +1805,9 @@ function openQR() {
 }
 function closeQR() { document.getElementById('qrModal').classList.remove('active'); }
 
+/* ============================================================
+   🎞️ REVEAL
+   ============================================================ */
 function initReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
@@ -1646,6 +1815,9 @@ function initReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+/* ============================================================
+   🚀 INIT
+   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initShader();
